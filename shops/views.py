@@ -1,9 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Shop
 from .forms import ShopForm, LocationForm
-import math
-
-EARTH_RADIUS = 6371
+from .utils import haversine_distance
 
 
 def create_shop(request):
@@ -37,28 +35,6 @@ def update_shop(request, pk):
 def location_view(request):
     form = LocationForm()
     return render(request, "shops/location.html", {"form": form})
-
-
-def haversine_distance(lat1, lon1, lat2, lon2):
-    # converting latitude and longitude from degrees to radians
-    lat1_rad = math.radians(lat1)
-    lon1_rad = math.radians(lon1)
-    lat2_rad = math.radians(lat2)
-    lon2_rad = math.radians(lon2)
-
-    # calculate the differences between the latitudes and longitudes
-    dlat = lat2_rad - lat1_rad
-    dlon = lon2_rad - lon1_rad
-
-    # Apply the Haversine formula
-    a = (
-        math.sin(dlat / 2) ** 2
-        + math.cos(lat1_rad) * math.cos(lat2_rad) * math.sin(dlon / 2) ** 2
-    )
-    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
-    distance = EARTH_RADIUS * c
-
-    return distance
 
 
 def shop_within_distance(request):
