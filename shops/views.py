@@ -98,4 +98,4 @@ def shop_within_distance(request):
             return render(request, "shops/shops.html", {"shops": nearby_shops})
     else:
         form = LocationForm()
-    return redirect("shops:location")
+    return render(request, "shops/shops.html", {"shops": nearby_shops})
