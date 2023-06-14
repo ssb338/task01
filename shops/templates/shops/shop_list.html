@@ -1,0 +1,9 @@
+<h1>Shop List</h1>
+<ul>
+    {% for shop in shops %}
+    <li>{{ shop.name }}</li>
+    <li>Latitude: {{ shop.latitude }}, Longitude: {{ shop.longitude }}</li>
+    {% empty %}
+    <li>No shops found.</li>
+    {% endfor %}
+</ul>

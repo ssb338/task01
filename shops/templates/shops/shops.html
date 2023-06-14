@@ -1,0 +1,9 @@
+<h1>Nearby Shops</h1>
+<ul>
+    {% for shop in shops %}
+    <li>{{ shop.name }}</li>
+    <li>Latitude: {{ shop.latitude }}, Longitude: {{ shop.longitude }}</li>
+    {% empty %}
+    <li>No shops found within the specified distance.</li>
+    {% endfor %}
+</ul>

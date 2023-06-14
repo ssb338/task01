@@ -1,0 +1,6 @@
+<h1>Enter Location Details</h1>
+<form method="post" action="{% url 'shops:shops-within-distance' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
