@@ -3,6 +3,9 @@
     {% for shop in shops %}
     <li>{{ shop.name }}</li>
     <li>Latitude: {{ shop.latitude }}, Longitude: {{ shop.longitude }}</li>
+    <a href="{% url 'shops:update-shop' pk=shop.pk %}">
+        Update
+    </a>
     {% empty %}
     <li>No shops found.</li>
     {% endfor %}
