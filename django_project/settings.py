@@ -56,7 +56,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "django_project.urls"
 CSRF_COOKIE_SECURE = False  # or False if testing locally
-CSRF_TRUSTED_ORIGINS = ["task01-production.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = ["https://task01-production.up.railway.app"]
 
 
 TEMPLATES = [
