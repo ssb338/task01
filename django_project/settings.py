@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "localhost",
     "task01-production.up.railway.app",
+    "task01-production.up.railway.app",
 ]
 
 
