@@ -55,6 +55,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "django_project.urls"
+CSRF_COOKIE_SECURE = True  # or False if testing locally
 
 TEMPLATES = [
     {
